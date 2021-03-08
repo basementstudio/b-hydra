@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'basement';
+  src: url('/fonts/basement-grotesque/basement-grotesqueRegularRegular.woff2')
+      format('woff2'),
+    url('/fonts/basement-grotesque/basement-grotesqueRegularRegular.woff')
+      format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
