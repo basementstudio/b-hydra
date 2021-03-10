@@ -1,8 +1,17 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: ['./src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'media',
+  darkMode: 'class',
   theme: {
+    fontFamily: {
+      body: 'var(--font-body)',
+      display: 'var(--font-display)'
+    },
     extend: {
+      colors: {
+        gray: colors.trueGray
+      },
       minWidth: {
         form: '484px'
       },
@@ -12,7 +21,10 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      opacity: ['disabled'],
+      cursor: ['disabled']
+    }
   },
   plugins: []
 }
