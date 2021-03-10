@@ -1,8 +1,15 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
+  purge: {
+    enabled: true,
+    preserveHtmlElements: false,
+    content: ['./src/**/*.{js,ts,jsx,tsx}'],
+    options: {
+      safelist: ['dark']
+    }
+  },
   theme: {
     fontFamily: {
       body: 'var(--font-body)',
