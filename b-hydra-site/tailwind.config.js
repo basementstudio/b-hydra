@@ -4,7 +4,6 @@ module.exports = {
   darkMode: 'class',
   purge: {
     enabled: true,
-    preserveHtmlElements: false,
     content: ['./src/**/*.{js,ts,jsx,tsx}'],
     options: {
       safelist: ['dark']

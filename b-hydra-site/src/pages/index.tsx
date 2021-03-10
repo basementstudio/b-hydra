@@ -35,37 +35,39 @@ const HomePage = () => {
   return (
     <section className="flex items-stretch bg-black">
       <main className="h-screen pb-8 mx-auto overflow-auto text-black transition-colors bg-white lg:min-w-form lg:max-w-form dark:bg-gray-900 dark:text-white">
-        <header className="sticky top-0 px-8 py-8 mb-4 space-y-8 bg-white dark:bg-gray-900">
+        <header className="sticky top-0 px-8 py-8 mb-2 bg-white dark:bg-gray-900">
           <Logo />
-          <p className="max-w-xs text-lg font-display">
+          <div className="absolute w-full h-4 pointer-events-none bg-gradient-to-b from-white dark:from-gray-900 to-transparent -bottom-4" />
+        </header>
+        <div className="px-8">
+          <p className="max-w-xs mb-12 text-lg font-display">
             A dynamic template for kickstarting your Next.js project.
           </p>
-          <div className="absolute w-full h-5 pointer-events-none bg-gradient-to-b from-white dark:from-gray-900 to-transparent -bottom-5" />
-        </header>
-        <form onSubmit={handleSubmit(onSubmit)} className="px-8 space-y-8">
-          {formData.map((d) => (
-            <RadioGroup
-              key={d.id}
-              label={d.label}
-              name={d.id}
-              items={d.items.map(({ label, value }) => ({
-                label,
-                value,
-                ref: register,
-                required: true,
-                id: value
-              }))}
-            />
-          ))}
-          <Submit disabled={formState.isSubmitting} />
-        </form>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+            {formData.map((d) => (
+              <RadioGroup
+                key={d.id}
+                label={d.label}
+                name={d.id}
+                items={d.items.map(({ label, value }) => ({
+                  label,
+                  value,
+                  ref: register,
+                  required: true,
+                  id: `${d.id}-${value}`
+                }))}
+              />
+            ))}
+            <Submit disabled={formState.isSubmitting} />
+          </form>
+        </div>
       </main>
       <aside className="items-center justify-center flex-grow hidden h-screen p-8 bg-black lg:flex">
         <Image
           src="/hydra.png"
           loading="eager"
-          width={711}
-          height={502}
+          width={500}
+          height={500}
           alt="Hydra"
         />
       </aside>
