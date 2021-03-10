@@ -64,7 +64,7 @@ const HomePage = () => {
       </main>
       <aside className="items-center justify-center flex-grow hidden h-screen p-8 bg-black lg:flex">
         <Image
-          src="/hydra.png"
+          src="/hydra.svg"
           loading="eager"
           width={500}
           height={500}
