@@ -1,8 +1,7 @@
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'next-themes'
-import 'css/global.css'
-import 'css/tailwind.css'
 import { Toaster } from 'react-hot-toast'
+import 'css/global.css'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
